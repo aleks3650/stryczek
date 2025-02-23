@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Burger from "./Burger";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -23,15 +24,15 @@ const Navbar = () => {
         <Burger />
       </div>
       <div className="hidden md:flex gap-4 text-3xl md:gap-8 lg:gap-12">
-        <a href="/" className="p-4">
+        <Link href="/about" className="p-4">
           O nas
-        </a>
-        <a href="/about" className="p-4">
+        </Link>
+        <Link href="/galery" className="p-4">
           Galeria
-        </a>
-        <a href="/contact" className="p-4">
+        </Link>
+        <Link href="/contact" className="p-4">
           Kontakt
-        </a>
+        </Link>
       </div>
     </nav>
   );

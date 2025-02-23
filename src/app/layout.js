@@ -1,7 +1,7 @@
 import { Shantell_Sans } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "./smoothScroll/SmoothScroll";
 import Navbar from "./navbar/Navbar";
+import SmoothScroll from "./Scroll/SmoothScroll";
 
 const shantellSans = Shantell_Sans({
   variable: "--font-shantell-sans",

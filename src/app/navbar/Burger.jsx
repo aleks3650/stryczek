@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
+import Link from "next/link";
 const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -95,15 +95,21 @@ const Burger = () => {
             variants={menuVariants}
             style={{ opacity: 0 }}
             className="flex flex-col absolute top-28 left-0 w-screen h-[calc(100vh-7rem)] items-center justify-evenly bg-white text-4xl text-black shadow-sm font-shantell-sans">
-            <motion.a variants={linkVariants} href="/" className="p-4">
-              O nas
-            </motion.a>
-            <motion.a variants={linkVariants} href="/about" className="p-4">
-              Galeria
-            </motion.a>
-            <motion.a variants={linkVariants} href="/contact" className="p-4">
-              Kontakt
-            </motion.a>
+            <motion.div variants={linkVariants} className="p-4">
+              <Link href="/about" onClick={() => setIsOpen(false)}>
+                O nas
+              </Link>
+            </motion.div>
+            <motion.div variants={linkVariants} className="p-4">
+              <Link href="/galery" onClick={() => setIsOpen(false)}>
+                Galeria
+              </Link>
+            </motion.div>
+            <motion.div variants={linkVariants} className="p-4">
+              <Link href="/contact" onClick={() => setIsOpen(false)}>
+                Kontakt
+              </Link>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
