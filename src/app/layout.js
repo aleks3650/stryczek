@@ -2,6 +2,7 @@ import { Shantell_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./navbar/Navbar";
 import SmoothScroll from "./Scroll/SmoothScroll";
+import Template from "./template";
 
 const shantellSans = Shantell_Sans({
   variable: "--font-shantell-sans",
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="pl">
       <body className={`${shantellSans.variable} antialiased`}>
         <Navbar />
-        {children}
+        <Template>{children}</Template>
         <SmoothScroll />
       </body>
     </html>

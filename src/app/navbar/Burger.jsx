@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, delay, motion } from "framer-motion";
 import Link from "next/link";
 const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +35,7 @@ const Burger = () => {
       y: -20,
       transition: {
         duration: 0.2,
+        delay: 0.25,
         staggerChildren: 0.05,
         staggerDirection: -1,
       },
