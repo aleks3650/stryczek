@@ -97,8 +97,8 @@ const Burger = () => {
             style={{ opacity: 0 }}
             className="flex flex-col absolute top-28 left-0 w-screen h-[calc(100vh-7rem)] items-center justify-evenly bg-white text-4xl text-black shadow-sm font-shantell-sans">
             <motion.div variants={linkVariants} className="p-4">
-              <Link href="/about" onClick={() => setIsOpen(false)}>
-                O nas
+              <Link href="/offer" onClick={() => setIsOpen(false)}>
+                Oferta
               </Link>
             </motion.div>
             <motion.div variants={linkVariants} className="p-4">

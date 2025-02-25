@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./navbar/Navbar";
 import SmoothScroll from "./Scroll/SmoothScroll";
 import Template from "./template";
+import Footer from "./footer/Footer";
 
 const shantellSans = Shantell_Sans({
   variable: "--font-shantell-sans",
@@ -24,7 +25,10 @@ export default function RootLayout({ children }) {
     <html lang="pl">
       <body className={`${shantellSans.variable} antialiased`}>
         <Navbar />
-        <Template>{children}</Template>
+        <main>
+          <Template>{children}</Template>
+          <Footer />
+        </main>
         <SmoothScroll />
       </body>
     </html>

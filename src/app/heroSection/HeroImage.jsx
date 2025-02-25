@@ -15,8 +15,8 @@ const HeroImage = () => {
 
   useEffect(() => {
     const TimeoutNumber = setTimeout(() => {
-      animate(progres1, 1, { duration: 1.25, ease: [0.76, 0, 0.24, 1] });
-      animate(progres2, 1, { duration: 1.4, ease: [0.76, 0, 0.24, 1] });
+      animate(progres1, 1, { duration: 1.4, ease: [0.76, 0, 0.24, 1] });
+      animate(progres2, 1, { duration: 1.0, ease: [0.76, 0, 0.24, 1] });
     }, 250);
 
     return () => {

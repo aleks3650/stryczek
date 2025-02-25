@@ -24,8 +24,8 @@ const Navbar = () => {
         <Burger />
       </div>
       <div className="hidden md:flex gap-4 text-3xl md:gap-8 lg:gap-12">
-        <Link href="/about" className="p-4">
-          O nas
+        <Link href="/offer" className="p-4">
+          Oferta
         </Link>
         <Link href="/galery" className="p-4">
           Galeria
