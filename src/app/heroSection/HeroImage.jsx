@@ -15,7 +15,7 @@ const HeroImage = () => {
 
   useEffect(() => {
     const TimeoutNumber = setTimeout(() => {
-      animate(progres1, 1, { duration: 1.4, ease: [0.76, 0, 0.24, 1] });
+      animate(progres1, 1, { duration: 1.3, ease: [0.76, 0, 0.24, 1] });
       animate(progres2, 1, { duration: 1.0, ease: [0.76, 0, 0.24, 1] });
     }, 250);
 
@@ -52,7 +52,7 @@ const HeroImage = () => {
           )`;
 
   return (
-    <div className=" w-full h-screen relative container mx-auto">
+    <div className=" w-full h-full relative container mx-auto">
       <motion.div
         className="w-[80vw] max-h-[475px] h-full top-1/4 right-4 absolute 
             md:w-[calc(75vw)] md:max-h-[600px] md:right-8 max-w-[1300px]"

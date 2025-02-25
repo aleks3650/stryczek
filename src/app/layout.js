@@ -26,7 +26,9 @@ export default function RootLayout({ children }) {
       <body className={`${shantellSans.variable} antialiased`}>
         <Navbar />
         <main>
-          <Template>{children}</Template>
+          <div className="container mx-auto">
+            <Template>{children}</Template>
+          </div>
           <Footer />
         </main>
         <SmoothScroll />

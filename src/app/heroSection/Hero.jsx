@@ -6,7 +6,7 @@ const Hero = () => {
   const heroData = Data.HeroData;
 
   return (
-    <section className="w-full h-screen relative container mx-auto">
+    <section className="w-full relative container mx-auto h-screen max-h-[1000px]">
       <div className="top-[20%] left-4 text-black absolute max-w-fit h-fit z-10 p-2">
         <h1
           className="flex bg-white bg-opacity-75 backdrop-blur-[2px] flex-col sm:flex-row w-fit leading-normal py-4 px-8 rounded-md 

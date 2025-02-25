@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import Burger from "./Burger";
 import Link from "next/link";
+import Logo from "./Logo";
 
 const Navbar = () => {
   return (
@@ -9,16 +9,7 @@ const Navbar = () => {
       className="flex fixed top-0 left-0 w-screen z-20 px-6 flex-row justify-between 
     items-center h-28 bg-white text-black shadow-lg font-shantell-sans">
       <div className="w-16 h-16 relative">
-        <Link href="/" className="flex gap-4 text-xl items-center">
-          <Image
-            src="/cinamonRoll.png"
-            height={64}
-            width={64}
-            priority
-            alt="Słodka Pętelka logo"
-          />
-          <span>Słodka Pętelka</span>
-        </Link>
+        <Logo />
       </div>
       <div className="block md:hidden">
         <Burger />

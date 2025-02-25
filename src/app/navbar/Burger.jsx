@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { AnimatePresence, delay, motion } from "framer-motion";
 import Link from "next/link";
+import { useBurgerStore } from "../state/store";
+
 const Burger = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const { isMobile, isOpen, setIsOpen, setIsMobile, toggleIsOpen } =
+    useBurgerStore();
 
   useEffect(() => {
     const checkViewport = () => {
@@ -17,7 +19,7 @@ const Burger = () => {
     checkViewport();
     window.addEventListener("resize", checkViewport);
     return () => window.removeEventListener("resize", checkViewport);
-  }, []);
+  }, [setIsMobile, setIsOpen]);
 
   const menuVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -34,8 +36,7 @@ const Burger = () => {
       opacity: 0,
       y: -20,
       transition: {
-        duration: 0.2,
-        delay: 0.25,
+        duration: 0.25,
         staggerChildren: 0.05,
         staggerDirection: -1,
       },
@@ -68,7 +69,7 @@ const Burger = () => {
       <motion.div
         key={`burger-${isMobile}`}
         className="cursor-pointer"
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={toggleIsOpen}
         animate={isOpen ? "open" : "closed"}>
         <svg
           stroke="currentColor"
