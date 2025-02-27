@@ -101,7 +101,7 @@ const photoData = [
     alt: "Kostka",
     description:
       "Nowoczesna interpretacja tradycyjnej 'kostki' z kruszonką i kremem serowym",
-    category: "Ciasta",
+    category: "Wypieki",
     allergens: ["gluten", "mleko"],
     price: { base: 40 },
     ingredients: ["twaróg", "kruszonka", "kardamon", "skórka pomarańczowa"],
@@ -114,7 +114,7 @@ const photoData = [
     alt: "Makowiec",
     description:
       "Tradycyjny makowiec z bakaliami i pomarańczą, ciasto drożdżowe",
-    category: "Ciasta",
+    category: "Wypieki",
     allergens: ["gluten", "orzechy"],
     price: { base: 35 },
     ingredients: ["mak", "miód", "rodzynki", "skórka pomarańczowa"],

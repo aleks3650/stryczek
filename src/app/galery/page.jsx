@@ -3,10 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import photos from "./photoData";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 const Page = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Wszystkie");
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
+  const selectedCategory = searchParams.get("category") || "Wszystkie";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -48,17 +51,33 @@ const Page = () => {
     "Wszystkie",
     ...new Set(photos.map((photo) => photo.category)),
   ];
-  const filteredPhotos =
+  const filteredPhotos = (
     selectedCategory === "Wszystkie"
-      ? photos
-      : photos.filter((photo) => photo.category === selectedCategory);
+      ? [...photos]
+      : photos.filter((photo) => photo.category === selectedCategory)
+  ).sort((a, b) => {
+    // Deterministyczne sortowanie na podstawie hash-a nazwy produktu
+    const hash = (str) =>
+      Array.from(str).reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    return hash(a.alt) - hash(b.alt);
+  });
+
+  const handleCategorySelect = (category) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (category === "Wszystkie") {
+      params.delete("category");
+    } else {
+      params.set("category", category);
+    }
+    router.replace(`${pathname}?${params.toString()}`);
+  };
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="container mx-auto px-8 py-8 md:py-12 mt-32">
+      className="container mx-auto px-8 py-8 md:py-12 mt-32 min-h-screen">
       <motion.header
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -90,7 +109,7 @@ const Page = () => {
               key={category}
               variants={categoryVariants}
               custom={i}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => handleCategorySelect(category)}
               className={`px-5 py-2 rounded-full transition-colors ${
                 selectedCategory === category
                   ? "bg-blue-600 text-white"

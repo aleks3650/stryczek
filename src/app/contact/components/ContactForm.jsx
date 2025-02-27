@@ -1,6 +1,6 @@
 const ContactForm = () => {
   return (
-    <form className="bg-white p-8 rounded-2xl shadow-lg space-y-6">
+    <form className="bg-white p-8 rounded-2xl shadow-lg space-y-6 w-full">
       <div>
         <label className="block text-gray-700 mb-2">Adres email</label>
         <input

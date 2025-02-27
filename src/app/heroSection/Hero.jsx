@@ -1,10 +1,7 @@
 import HeroImage from "./HeroImage";
 import Loop from "./Loop";
-import Data from "./data.json";
 
 const Hero = () => {
-  const heroData = Data.HeroData;
-
   return (
     <section className="w-full relative container mx-auto h-screen max-h-[1000px]">
       <div className="top-[20%] left-4 text-black absolute max-w-fit h-fit z-10 p-2">
@@ -19,19 +16,13 @@ const Hero = () => {
         <h2 className="hidden sm:flex mt-12 p-6 bg-white w-fit bg-opacity-75 mb-16 backdrop-blur-[1px] flex-col rounded-md opacity-0 text-2xl animate-fade-in-delay md:text-3xl lg:text-4xl ">
           <span>Domowa cukiernia tego typu.</span>
         </h2>
-        <div className="hidden mt-12 sm:flex gap-4 md:gap-8 lg:gap-12">
-          {Object.keys(heroData).map((key) => (
-            <div
-              key={key}
-              className="flex flex-col items-center opacity-0 bg-white bg-opacity-75  p-4 rounded-md animate-fade-in-delay-long">
-              <h3 className="max-w-32 ">{heroData[key].Name}</h3>
-              <img
-                alt="cake image"
-                className="w-16 h-16"
-                src={heroData[key].Image}
-              />
-            </div>
-          ))}
+        <div className="hidden md:block mt-12 max-w-2xl opacity-0 bg-white bg-opacity-75 text-lg p-4 rounded-md animate-fade-in-delay-long">
+          <span>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Perferendis, quia. Explicabo, nobis reiciendis? Sapiente molestias
+            rerum commodi maxime vel consequuntur nesciunt! Nisi, consequuntur
+            aliquid vitae quia vero velit atque inventore.
+          </span>
         </div>
       </div>
       <HeroImage />

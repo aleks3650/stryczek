@@ -5,14 +5,14 @@ import PageHeader from "./components/PageHeader";
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen mt-32 mb-16 rounded-lg shadow-xl bg-gray-50">
-      <div className="container mx-auto px-4 py-16">
+    <div className="min-h-screen  mt-32 mb-16 rounded-lg shadow-xl bg-gray-50 w-full">
+      <div className="container mx-auto px-4 py-16 w-full">
         <PageHeader
           title="Skontaktuj się z nami"
           description="Masz pytania lub chcesz złożyć zamówienie? Jesteśmy do Twojej dyspozycji!"
         />
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 mb-16 w-full">
           <ContactInfo />
           <ContactForm />
         </div>

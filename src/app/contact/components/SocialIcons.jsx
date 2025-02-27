@@ -20,13 +20,13 @@ const SocialIcons = () => {
   return (
     <div className="pt-6 border-t border-gray-100">
       <h3 className="text-lg font-semibold mb-4">Obserwuj nas</h3>
-      <div className="flex gap-4">
+      <div className="flex gap-x-4">
         {icons.map((item, index) => (
           <a
             key={index}
             href={item.href}
             target="_blank"
-            className="p-2 bg-gray-100 rounded-lg hover:bg-blue-100
+            className="p-x-2 bg-gray-100 rounded-lg hover:bg-blue-100
             transition-colors text-gray-600 hover:text-blue-600">
             {item.icon}
           </a>

@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <body className={`${shantellSans.variable} antialiased`}>
         <Navbar />
         <main>
-          <div className="container mx-auto">
+          <div className="container mx-auto min-h-screen">
             <Template>{children}</Template>
           </div>
           <Footer />
