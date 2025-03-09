@@ -3,6 +3,7 @@
 import { useMotionValue } from "framer-motion";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Cart1 from "./Cart1";
 
 const IMAGES = [1, 2, 3];
 const AMOUNT_OF_IMAGES = IMAGES.length;
@@ -44,7 +45,7 @@ const News = () => {
             role="group"
             aria-label={`News item ${i + 1}`}
             aria-roledescription="carousel item">
-            <h2 className="text-center mt-6 text-lg">TITLE OF CART {item}</h2>
+            {imgIndex === 1 && <Cart1 />}
           </motion.div>
         ))}
       </div>
