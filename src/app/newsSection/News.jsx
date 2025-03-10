@@ -1,61 +1,99 @@
 "use client";
 
 import { useMotionValue } from "framer-motion";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import Cart1 from "./Cart1";
+import DifferentComponent1 from "./Component1";
+import DifferentComponent2 from "./Component2";
+import DifferentComponent3 from "./Component3";
 
-const IMAGES = [1, 2, 3];
-const AMOUNT_OF_IMAGES = IMAGES.length;
+const SLIDE_GAP = 48;
+const DRAG_THRESHOLD = 75;
+
+const SLIDES = [
+  {
+    id: 1,
+    component: <DifferentComponent1 />,
+    ariaLabel: "Pierwszy news",
+  },
+  {
+    id: 2,
+    component: <DifferentComponent2 />,
+    ariaLabel: "Drugi news",
+  },
+  {
+    id: 3,
+    component: <DifferentComponent3 />,
+    ariaLabel: "Trzeci news",
+  },
+];
 
 const News = () => {
-  const [imgIndex, setImgIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const dragX = useMotionValue(0);
 
-  const onDragEnd = () => {
+  const handleDragEnd = useCallback(() => {
     const x = dragX.get();
-    if (x < -75 && imgIndex < AMOUNT_OF_IMAGES - 1) {
-      setImgIndex((prev) => prev + 1);
-    } else if (x > 75 && imgIndex > 0) {
-      setImgIndex((prev) => prev - 1);
+    if (x < -DRAG_THRESHOLD && currentIndex < SLIDES.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+    } else if (x > DRAG_THRESHOLD && currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
     }
+  }, [currentIndex, dragX]);
+
+  const springTransition = {
+    type: "spring",
+    stiffness: 100,
+    damping: 20,
+    mass: 0.5,
   };
 
   return (
-    <section className="my-10 relative">
+    <section className="my-10 relative" aria-label="Aktualności">
       <h1 className="text-center text-4xl mb-12">Aktualności</h1>
-      <div className="container h-[80dvh] mb-16 mt-12 p-8 gap-12 max-h-[1200px] flex overflow-hidden">
-        {IMAGES.map((item, i) => (
+
+      <div
+        className="container  mb-16 mt-12 p-8 gap-12 max-h-[1200px] flex overflow-hidden"
+        role="region"
+        aria-live="polite">
+        {SLIDES.map((slide) => (
           <motion.div
-            key={item}
-            onDragEnd={onDragEnd}
+            key={slide.id}
+            onDragEnd={handleDragEnd}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             style={{ x: dragX }}
             animate={{
-              translateX: `calc(-${imgIndex * 100}% - ${imgIndex * 48}px)`,
+              translateX: `calc(-${currentIndex * 100}% - ${
+                currentIndex * SLIDE_GAP
+              }px)`,
             }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 20,
-              mass: 0.5,
-            }}
-            className="bg-white shadow-xl h-[90%] w-full shrink-0 rounded-xl"
+            transition={springTransition}
+            className="bg-white shadow-xl w-full shrink-0 rounded-xl"
             role="group"
-            aria-label={`News item ${i + 1}`}
-            aria-roledescription="carousel item">
-            {imgIndex === 1 && <Cart1 />}
+            aria-roledescription="slide"
+            aria-label={slide.ariaLabel}>
+            {slide.component}
           </motion.div>
         ))}
       </div>
-      <div className="flex absolute top-20 left-1/2 gap-6 -translate-x-1/2">
-        {IMAGES.map((_, i) => (
-          <div
-            key={i}
-            className={`${
-              i === imgIndex ? "bg-black" : "bg-gray-500"
-            } rounded-full transition-all duration-500 size-4`}></div>
+
+      <div
+        className="flex absolute top-20 left-1/2 gap-6 -translate-x-1/2"
+        role="navigation"
+        aria-label="Sterowanie karuzelą">
+        {SLIDES.map((slide, index) => (
+          <button
+            key={slide.id}
+            onClick={() => setCurrentIndex(index)}
+            className={`rounded-full transition-all duration-500 size-4 ${
+              index === currentIndex
+                ? "bg-black"
+                : "bg-gray-500 hover:bg-gray-700"
+            }`}
+            aria-label={`Przejdź do slajdu ${index + 1}`}
+            aria-current={index === currentIndex}
+          />
         ))}
       </div>
     </section>
