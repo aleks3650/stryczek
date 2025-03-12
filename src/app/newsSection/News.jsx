@@ -50,7 +50,7 @@ const News = () => {
 
   return (
     <section className="my-10 relative" aria-label="Aktualności">
-      <h1 className="text-center text-4xl mb-12">Aktualności</h1>
+      <h1 className="text-center text-4xl mb-12 mt-40">Aktualności</h1>
 
       <div
         className="container  mb-16 mt-12 p-8 gap-12 max-h-[1200px] flex overflow-hidden"

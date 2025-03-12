@@ -7,3 +7,7 @@ export const useBurgerStore = create((set) => ({
   toggleIsOpen: () => set((state) => ({ isOpen: !state.isOpen })),
   setIsMobile: (isMobile) => set({ isMobile }),
 }));
+export const usePopupStore = create((set) => ({
+  component: null,
+  setComponent: (component) => set({ component }),
+}));

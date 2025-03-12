@@ -1,11 +1,22 @@
-import React from "react";
+'use client'
+import {usePopupStore} from '../state/store'
 import CartTop from "./CartTop";
 
 const Component1 = () => {
+const {component, setComponent} = usePopupStore()
+const handleClick = () => {
+  setComponent(
+    <div className='bg-blue-500'><h1>clicked thing</h1></div>
+  )
+}
+const handleClear = () => {
+  setComponent(null)
+}
   return (
-    <div>
+    <article>
       <CartTop />
-    </div>
+      <div className=" bg-red-500 mb-6 w-fit" onClick={handleClick}>click me!</div>
+    </article>
   );
 };
 
