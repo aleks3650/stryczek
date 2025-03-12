@@ -69,7 +69,7 @@ const News = () => {
               }px)`,
             }}
             transition={springTransition}
-            className="bg-white shadow-xl w-full shrink-0 rounded-xl"
+            className="bg-white shadow-xl w-full shrink-0 rounded-xl "
             role="group"
             aria-roledescription="slide"
             aria-label={slide.ariaLabel}>

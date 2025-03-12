@@ -16,16 +16,14 @@ const ImageComponent = ({ src, alt }) => {
     <>
       <motion.div
         layoutId={alt}
-        className="relative cursor-pointer aspect-square"
+        className="relative cursor-pointer h-full w-full "
         onClick={() => setIsOpen(true)}
         whileHover={{ scale: 1.02 }}
         transition={{ type: "spring", stiffness: 250, damping: 30 }}>
         <Image
           src={src}
           alt={alt}
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover rounded-xl"
+          className="object-cover h-full w-full rounded-xl"
           priority
         />
       </motion.div>
@@ -37,18 +35,16 @@ const ImageComponent = ({ src, alt }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4">
-            <div className="relative max-w-4xl w-full">
+            <div className="relative ">
               <motion.div
+                className="relative aspect-auto "
                 layoutId={alt}
-                className="relative aspect-square w-full"
                 onClick={(e) => e.stopPropagation()}>
                 <Image
                   src={src}
                   alt={alt}
                   ref={modalRef}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 80vw"
-                  className="object-contain"
+                  className="object-contain w-fit h-fit max-w-[80vw] max-h-[80vh]"
                   priority
                 />
               </motion.div>
@@ -58,6 +54,7 @@ const ImageComponent = ({ src, alt }) => {
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
                 onClick={() => setIsOpen(false)}
                 aria-label="Zamknij podgląd">
                 ✕

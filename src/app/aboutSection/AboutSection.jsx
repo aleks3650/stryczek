@@ -42,7 +42,7 @@ const AboutSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-8">
                 <OverlayX delay={0.5} left={true}>
                   <Link
                     href="/galery"
@@ -53,7 +53,7 @@ const AboutSection = () => {
                 <OverlayX delay={0.5} left={false}>
                   <Link
                     href="/contact"
-                    className="px-6 py-3 border-2 border-amber-600 text-amber-600 rounded-full hover:bg-amber-50 transition-colors">
+                    className="px-6 py-3 border-2  border-amber-600 text-amber-600 rounded-full hover:bg-amber-50 transition-colors">
                     Zadaj mi pytanie
                   </Link>
                 </OverlayX>

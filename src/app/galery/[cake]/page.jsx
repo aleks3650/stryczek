@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import photoData from "../photoData";
 import ImageComponent from "./ImageComponent";

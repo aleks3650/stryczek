@@ -3,7 +3,7 @@ import SVG from "./SVG";
 
 const NotFound = () => {
   return (
-    <div className="container mt-10 mx-auto flex flex-col h-screen items-center justify-center text-center">
+    <div className="container relative mt-10 mx-auto flex flex-col h-screen items-center justify-center text-center">
       <SVG />
 
       <h1 className="text-2xl mx-2">
