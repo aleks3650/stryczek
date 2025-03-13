@@ -15,7 +15,7 @@ const handleClear = () => {
   return (
     <article>
       <CartTop />
-      <div className=" bg-red-500 mb-6 w-fit" onClick={handleClick}>click me!</div>
+      <div className=" bg-orange-500 mb-6 w-fit" onClick={handleClick}>click me!</div>
     </article>
   );
 };
