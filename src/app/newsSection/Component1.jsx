@@ -34,7 +34,8 @@ const Component1 = () => {
           </div>
         </div>
         <motion.div onTap={handleClick} layoutId="photo"
-        transition={{duration: .25, ease: "easeIn"}}
+        transition={{duration: .25, ease: "easeIn", stiffness: 40, mass:2000}}
+        className="cursor-pointer"
         >
           <Image
             alt="photo of image"
