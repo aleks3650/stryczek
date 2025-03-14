@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const CartTop = ({ date }) => {
   return (
-    <header className="flex items-center justify-between m-2">
+    <header className=" items-center justify-between m-2 hidden md:flex">
       <div className="flex items-center ">
         <Image
           src="/cinamonRoll.png"

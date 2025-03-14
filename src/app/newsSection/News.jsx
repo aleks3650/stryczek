@@ -69,7 +69,7 @@ const News = () => {
               }px)`,
             }}
             transition={springTransition}
-            className="bg-white shadow-xl w-full shrink-0 rounded-xl "
+            className="bg-white shadow-xl w-full shrink-0 rounded-xl h-fit"
             role="group"
             aria-roledescription="slide"
             aria-label={slide.ariaLabel}>
@@ -79,7 +79,7 @@ const News = () => {
       </div>
 
       <div
-        className="flex absolute top-20 left-1/2 gap-6 -translate-x-1/2"
+        className="flex absolute top-20 left-1/2 gap-6 h-fit -translate-x-1/2"
         role="navigation"
         aria-label="Sterowanie karuzelą">
         {SLIDES.map((slide, index) => (

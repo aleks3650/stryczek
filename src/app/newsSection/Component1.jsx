@@ -21,10 +21,10 @@ const Component1 = () => {
     );
   };
   return (
-    <article className="mx-2  my-4 ">
+    <article className="mx-2  my-2 ">
       <CartTop date="2 marca o 15:49" />
       <div className="flex flex-col md:flex-row">
-        <div className="">
+        <div className="p-1">
           <p className="mt-4 text-lg text-gray-800 leading-relaxed lg:text-3xl">
             A do niedzielnej kawy Słodka Pętelka poleca drożdżówkę z serem 😊
           </p>
@@ -40,7 +40,7 @@ const Component1 = () => {
           <Image
             alt="photo of image"
             className="object-cover max-h-72 rounded-md 
-          pointer-events-none sm:max-h-[20rem] md:max-h-[30rem] lg:max-h-[35rem]"
+          pointer-events-none sm:max-h-[20rem] md:max-h-[22rem] lg:max-h-[30rem]"
             src={photo}
           />
         </motion.div>
