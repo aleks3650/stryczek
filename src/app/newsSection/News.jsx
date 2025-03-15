@@ -49,11 +49,11 @@ const News = () => {
   };
 
   return (
-    <section className="my-10 relative" aria-label="Aktualności">
-      <h1 className="text-center text-4xl mb-12 mt-40">Aktualności</h1>
+    <section className="mb-6 mt-40 relative" aria-label="Aktualności">
+      <h1 className="text-center text-4xl mb-12 mt-4">Aktualności</h1>
 
       <div
-        className="container  mb-16 mt-12 p-8 gap-12 max-h-[1200px] flex overflow-hidden"
+        className="container mt-12 p-8 gap-12 max-h-[1200px] flex overflow-hidden"
         role="region"
         aria-live="polite">
         {SLIDES.map((slide) => (
@@ -79,7 +79,7 @@ const News = () => {
       </div>
 
       <div
-        className="flex absolute top-20 left-1/2 gap-6 h-fit -translate-x-1/2"
+        className="flex absolute top-20 left-1/2 gap-6 h-fit -translate-x-1/2 w-fit"
         role="navigation"
         aria-label="Sterowanie karuzelą">
         {SLIDES.map((slide, index) => (
