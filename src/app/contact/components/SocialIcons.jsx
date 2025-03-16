@@ -26,7 +26,7 @@ const SocialIcons = () => {
             key={index}
             href={item.href}
             target="_blank"
-            className="p-x-2 bg-gray-100 rounded-lg hover:bg-blue-100
+            className="p-x-2 bg-gray-100 rounded-full hover:bg-blue-100
             transition-colors text-gray-600 hover:text-blue-600">
             {item.icon}
           </a>
